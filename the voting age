@@ -1,0 +1,6 @@
+n1 = float(input("how old are you?"))
+
+if n1 > 18:
+    print("you are eligible for voting!")
+elif 18 > n1:
+    print("You are not eligible for voting!")
