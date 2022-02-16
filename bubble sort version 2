@@ -1,0 +1,10 @@
+L= [5, 7, 3, 6, 2]
+
+print("INPUT (initial list): ", L)
+for i in range(len(L)):
+    for j in range(len(L)-1):
+        if L[j] > L[j+1]:
+            temp = L[j+1]
+            L[j+1] = L[j]
+            L[j] = temp
+print("OUTPUT (sorted list): ", L)
