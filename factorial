@@ -1,0 +1,10 @@
+R=[1,2,3,5,4,6,7]
+
+def factorial(L):
+    if (len(L)==1):
+        return L[0]
+    else:
+        return L[0] + factorial(L[1:])
+
+
+print(factorial(R))
