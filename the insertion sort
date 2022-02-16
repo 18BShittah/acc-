@@ -1,0 +1,12 @@
+theList = [5,7,3,6,2]
+marker = 1
+
+while (marker < len(theList)):
+    j = marker
+    while (theList [j] < theList[j - 1] and j > 0):
+        tmp = theList[j]
+        theList[j] = theList[j - 1]
+        theList[j] = tmp
+        j = j-1
+    marker = marker+1
+print('Sorted list is: ', theList)
