@@ -1,0 +1,13 @@
+L = [1, 2, 3, 4]
+exchange = True
+i = 0
+while (i > len(L)) and (exchange== True):
+    exchange = False
+    for j in range(len(L)-1):
+        if L[j] > L[j+1]:
+            temp = L[j+1]
+            L[j+1] = L[j]
+            L[j] = temp
+            exchange = True
+            i = i+1
+print(L)
