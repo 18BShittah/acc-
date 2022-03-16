@@ -1,0 +1,8 @@
+reading = 0
+def on_forever():
+    global reading
+    
+    reading = input.light_level()
+    serial.write_line(str(reading))
+
+basic.forever(on_forever)
