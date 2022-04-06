@@ -1,0 +1,6 @@
+file = open("unicode.txt","r")
+lines = file.readline()
+print(lines)
+s = "u+0x41u+0x52"
+for i in s:
+    print(
