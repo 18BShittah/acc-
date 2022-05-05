@@ -1,12 +1,10 @@
-
 <!Doctype html>
 <header> Your Home automation company! </header>
 
 	<html>
 	
 		<head>
-		<title> Bolu's home automation company </title>
-		</head>
+			<title> Bolu's home automation company</title>
 		<body>
 		<header> Your Home automation company! </header>
 		<p> Welcome to the your Home Automation Company </p>
@@ -24,9 +22,13 @@
 			<td>60.99/month</td>
 		</tr>
 		</table>
-		<p> The standard package includes: Lights control, Automatic door locking, Automatic window locking </p>
-		<p> The premium package includes: Everything in the standard package,
-			
+		<p> The standard package includes: Lights control, Automatic door locking, Automatic window locking, home security </p>
+		<p> The premium package includes: Everything in the standard package,Physical control panel, outdoor lighting control, </p>
+		
+		
+		
+		<p>Click this link for page 2</p>
+		<a href="">link text</a>
 		</body>
 		</head>
 	</html>
