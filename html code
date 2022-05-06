@@ -23,12 +23,13 @@
 		</tr>
 		</table>
 		<p> The standard package includes: Lights control, Automatic door locking, Automatic window locking, home security </p>
-		<p> The premium package includes: Everything in the standard package,Physical control panel, outdoor lighting control, </p>
+		<p> The premium package includes: Everything in the standard package,Physical control panel, outdoor lighting control </p>
 		
 		
 		
-		<p>Click this link for page 2</p>
-		<a href="">link text</a>
+		
+		<a href="page2.html">Page 2</a>
+		<a href="page3.html">Page 3</a> 
 		</body>
 		</head>
 	</html>
