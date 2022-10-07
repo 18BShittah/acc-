@@ -1,0 +1,42 @@
+#1
+a1 = float(input("type your first number with a decimal "))
+a2 = float(input("type your second number with a decimal"))
+
+print(a1+a2)
+print(a1-a2)
+print(a1*a2)
+
+#2
+seconds = float(input("type how many seconds you want to see in seconds"))
+
+print(seconds//60)
+
+#3
+numberlist =[]
+numb1 = input("type your first letter you want in their  ASCII decimal value")
+numb2 = input("type your second letter you want in their  ASCII decimal value")
+numb3 = input("type your third letter you want in their ASCII decimal value")
+numb4 = input("type your fourth letter you want in their  ASCII decimal value")
+numb5 = input("type your fifth letter you want in their  ASCII decimal value")
+
+numberlist.append(numb1)
+numberlist.append(numb2)
+numberlist.append(numb3)
+numberlist.append(numb4)
+numberlist.append(numb5)
+for i in numberlist:
+    print(ord(i))
+
+
+
+
+#4
+questlist = []
+
+for w in range(5):
+    x =  input("type in 5 number")
+    questlist.append(x)
+
+while x in questlist:
+    x + 1
+    print(x)
