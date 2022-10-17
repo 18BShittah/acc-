@@ -33,10 +33,14 @@ for i in numberlist:
 #4
 questlist = []
 
-for w in range(5):
-    x =  input("type in 5 number")
-    questlist.append(x)
-
-while x in questlist:
-    x + 1
-    print(x)
+for i in range(5):
+    w =  int(input("type in 5 number"))
+    questlist.append(w)
+total = 0
+for w in questlist:
+    print(w+1)
+    if w > 0:
+        total = total + w
+    elif w < 0:
+        print(false)
+print(total)
