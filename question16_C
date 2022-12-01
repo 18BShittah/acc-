@@ -1,0 +1,12 @@
+bmi_values = [24, 19, 33, 35, 27, 18, 15, 33, 35, 23, 32, 23]
+reat = 0
+for i in bmi_values:
+    if i > 30:
+        reat = reat + 1
+        print(reat)
+    if i == bmi_values:
+        reat = reat + 1
+        print(reat)
+bmi_values.sort()
+print("Largest:", bmi_values[-1])
+print("Second Largest:", bmi_values[-3])
