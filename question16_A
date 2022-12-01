@@ -1,0 +1,22 @@
+def display_intro():
+    print("Welcome to my BMI calculator!")
+    weight = int(input("Enter weight (in kilograms): "))
+    height = int(input("Enter in your height")) # centimetres
+    #read height
+    bmi = weight / pow(height,2) * 10000
+    if bmi in range(0,18):
+        print("BMI is: ", round(bmi))
+        print("Underweight")
+    if bmi in range(19,24):
+        print("BMI is: ", round(bmi))
+        print("Normal")
+    if bmi in range(25,29):
+        print("BMI is: ", round(bmi))
+        print("Overweight")
+    if bmi ==30:
+        print("BMI: ", round(bmi))
+        print("Obese")
+    elif bmi > 30:
+        print("BMI", round(bmi))
+        print("Obese")
+display_intro()
