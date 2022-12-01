@@ -1,0 +1,15 @@
+from random import *
+
+heights = [] # an empty list of heights
+weights = [] # an empty list of weights
+bmi_values = [] # an empty list of bmi values
+aht = int(input("Type in how many numbers u want in each list: "))
+# Loop to build up the lists with random values
+for count in range(aht):
+    # a random integer between 150 and 210
+    heights.append(randint(150, 210))
+    # a random integer between 50 and 130
+    weights.append(randint(50, 130))
+# Display the lists
+print("Heights: ", heights)
+print("Weights: ", weights)
