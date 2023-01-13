@@ -1,0 +1,47 @@
+import random
+
+def roll_die():
+  return random.randint(1, 6)
+
+def play_pig_2players():
+  player1_score = 0
+  player2_score = 0
+  L = ["player", "computer"]
+  current_player = L[random.randint(0, 1)]
+  while True:
+    if current_player == "player":
+      print(f"Player1: {player1_score}. Player2: {player2_score}.")
+      print("Player1 turn")
+      choice = input("Enter r to roll, h to hold: ")
+      if choice == "r":
+        roll = roll_die()
+        if roll == 1:
+          player_score = 0
+          print("You rolled a 1. Your turn is over.")
+          current_player = "player2"
+        else:
+          player1_score += roll
+          print(f"You rolled a {roll}.")
+      elif choice == "h":
+        current_player = "player2"
+    else:
+      print(f"Player1: {player1_score}. Player2: {player2_score}.")
+      print("Player2 turn")
+      player2_choice = choice = input("Enter r to roll, h to hold: ")
+      if choice == "r":
+        roll = roll_die()
+        if roll == 1:
+          player2_score = 0
+          print("You rolled a 1. Your turn is over.")
+          current_player = "player"
+        else:
+          player2_score += roll
+          print(f"Player2 rolled a {roll}.")
+      elif player2_choice == "h":
+        current_player = "player"
+    if player1_score >= 50:
+      print("Player1 Wins!")
+    if player2_score >= 50:
+        print("Player2 Wins!")
+      
+play_pig_2players()
