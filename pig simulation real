@@ -1,5 +1,9 @@
 import random
+import pandas as pd
+import csv
+import os
 
+    
 def roll_die():
   return random.randint(1, 6)
 
@@ -37,9 +41,19 @@ def play_pig_simulation():
         current_player = "player"
     if player_score >= 50:
       print("You win!")
-      break
+      data = ("simulation wins")
+    if not os.path.exists("Winnings.csv"):
+        f1 = open("Winnings.csv", mode='w', newline="")
+        write = csv.reader(f1)
+        write.writerow(data)
+    break
     if computer_score >= 50:
       print("The computer wins.")
-      break
+      data = ("simulationwins")
+    if not os.path.exists("Winnings.csv"):
+        f1 = open("Winnings.csv", mode='w', newline="")
+        write = csv.reader(f1)
+        write.writerow(data)
+    break
 
 play_pig_simulation()
