@@ -41,20 +41,26 @@ def play_pig():
   
     if player_score >= 50:
         print("The player wins.")
-        data = ("player wins")
-    if not os.path.exists("Winnings.csv"):
-        f1 = open("Winnings.csv", mode='w', newline="")
-        write = csv.reader(f1)
-        write.writerow(data)
-    break
+        data = [("player wins")]
+        if not os.path.exists("Winnings.csv"):
+            f1 = open("Winnings.csv", mode='w', newline="")
+        else:
+            f1 = open("Winnings.csv", mode='a', newline="")
+            write = csv.writer(f1)
+            write.writerow(data)
+            f1.close()
+        break
 
     if computer_score >= 50:
         print("The computer wins.")
-        data = ("computer wins")
-    if not os.path.exists("Winnings.csv"):
-        f1 = open("Winnings.csv", mode='w', newline="")
-        write = csv.reader(f1)
-        write.writerow(data)
-    break
+        data = [("computer wins")]
+        if not os.path.exists("Winnings.csv"):
+            f1 = open("Winnings.csv", mode='w', newline="")
+        else:
+            f1 = open("Winnings.csv", mode='a', newline="")
+            write = csv.writer(f1)
+            write.writerow(data)
+            f1.close()
+        break
 
 play_pig()
