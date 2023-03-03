@@ -3,7 +3,6 @@ import pandas as pd
 import csv
 import os
 
-    
 def roll_die():
   return random.randint(1, 6)
 
@@ -18,7 +17,7 @@ def play_pig_simulation():
     if player_choice == "r":
         roll = roll_die()
     if roll == 1:
-        player_score = 0
+        player_current_score = player_score
         print("The player rolled a 1. Its turn is over.")
         current_player = "computer"
     else:
@@ -31,7 +30,7 @@ def play_pig_simulation():
       if computer_choice == "r":
         roll = roll_die()
         if roll == 1:
-          computer_score = 0
+          computer_current_score = computer_score
           print("The computer rolled a 1. Its turn is over.")
           current_player = "player"
         else:
@@ -39,21 +38,31 @@ def play_pig_simulation():
           print(f"The computer rolled a {roll}.")
       elif computer_choice == "h":
         current_player = "player"
+
+
+
     if player_score >= 50:
-      print("You win!")
-      data = ("simulation wins")
-    if not os.path.exists("Winnings.csv"):
-        f1 = open("Winnings.csv", mode='w', newline="")
-        write = csv.reader(f1)
-        write.writerow(data)
-    break
+        print("You win!")
+        data = [("simulation1 wins")]
+        if not os.path.exists("Winnings.csv"):
+            f1 = open("Winnings.csv", mode='w', newline="")
+        else:
+            f1 = open("Winnings.csv", mode='a', newline="")
+            write = csv.writer(f1)
+            write.writerow(data)
+            f1.close()
+        break
+        
     if computer_score >= 50:
-      print("The computer wins.")
-      data = ("simulationwins")
-    if not os.path.exists("Winnings.csv"):
-        f1 = open("Winnings.csv", mode='w', newline="")
-        write = csv.reader(f1)
-        write.writerow(data)
-    break
+        print("The computer wins.")
+        data = [("simulation2 wins")]
+        if not os.path.exists("Winnings.csv"):
+            f1 = open("Winnings.csv", mode='w', newline="")
+        else:
+            f1 = open("Winnings.csv", mode='w', newline="")
+            write = csv.writer(f1)
+            write.writerow(data)
+            f1.close()
+        break
 
 play_pig_simulation()
