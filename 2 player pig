@@ -1,4 +1,7 @@
 import random
+import pandas as pd
+import csv
+import os
 
 def roll_die():
   return random.randint(1, 6)
@@ -16,7 +19,7 @@ def play_pig_2players():
       if choice == "r":
         roll = roll_die()
         if roll == 1:
-          player_score = 0
+          player1_score = 0
           print("You rolled a 1. Your turn is over.")
           current_player = "player2"
         else:
@@ -39,9 +42,33 @@ def play_pig_2players():
           print(f"Player2 rolled a {roll}.")
       elif player2_choice == "h":
         current_player = "player"
+    
+    
     if player1_score >= 50:
-      print("Player1 Wins!")
+        print("Player 1 won!")
+        data = [("player1 wins")]
+        if not os.path.exists("Winnings.csv"):
+            f1 = open("Winnings.csv", mode='w', newline="")
+        else:
+            f1 = open("Winnings.csv", mode='a', newline="")
+            write = csv.writer(f1)
+            write.writerow(data)
+            f1.close()
+        break
+
+
+
+
     if player2_score >= 50:
-        print("Player2 Wins!")
+        print("Player 2 won!")
+        data = [("player2 wins")]
+        if not os.path.exists("Winnings.csv"):
+            f1 = open("Winnings.csv", mode='w', newline="")
+        else:
+            f1 = open("Winnings.csv", mode='a', newline="")
+            write = csv.writer(f1)
+            write.writerow(data)
+            f1.close()
+        break
       
 play_pig_2players()
