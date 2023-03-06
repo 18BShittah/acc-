@@ -7,6 +7,10 @@ def roll_die():
   return random.randint(1, 6)
 
 def play_pig_simulation():
+  
+  player_times_rolled = 0
+  computer_times_rolled = 0
+  
   player_score = 0
   computer_score = 0
   current_player = "player"
@@ -16,6 +20,7 @@ def play_pig_simulation():
         player_choice = "h" if player_score + roll_die() >= 50 else "r"
     if player_choice == "r":
         roll = roll_die()
+        player_times_rolled = player_times_rolled + 1
     if roll == 1:
         player_current_score = player_score
         print("The player rolled a 1. Its turn is over.")
@@ -29,6 +34,7 @@ def play_pig_simulation():
       computer_choice = "h" if computer_score + roll_die() >= 50 else "r"
       if computer_choice == "r":
         roll = roll_die()
+        computer_times_rolled = computer_times_rolled + 1
         if roll == 1:
           computer_current_score = computer_score
           print("The computer rolled a 1. Its turn is over.")
