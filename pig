@@ -1,11 +1,16 @@
 import random
 import csv
 import pandas as pd
-import os 
+import os
+
 def roll_die():
   return random.randint(1, 6)
 
 def play_pig():
+
+player_times_rolled = 0
+computer_times_rolled = 0
+
   player_score = 0
   computer_score = 0
   current_player = "player"
@@ -14,6 +19,7 @@ def play_pig():
       print(f"Your score: {player_score}. Computer score: {computer_score}.")
       choice = input("Enter r to roll, h to hold: ")
       if choice == "r":
+        player_times_rolled = player_times_rolled + 1
         roll = roll_die()
         if roll == 1:
           player_current_score = player_score
@@ -29,6 +35,7 @@ def play_pig():
       computer_choice = "h" if computer_score + roll_die() >= 50 else "r"
       if computer_choice == "r":
         roll = roll_die()
+        computer_times_rolled = computer_times_rolled + 1
         if roll == 1:
           computer_current_score = computer_score
           print("The computer rolled a 1. Its turn is over.")
