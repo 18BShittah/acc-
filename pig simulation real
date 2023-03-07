@@ -7,12 +7,10 @@ def roll_die():
   return random.randint(1, 6)
 
 def play_pig_simulation():
-  
-  player_times_rolled = 0
-  computer_times_rolled = 0
-  
   player_score = 0
   computer_score = 0
+  player_rolls = 0
+  computer_rolls = 0
   current_player = "player"
   while True:
     if current_player == "player":
@@ -20,7 +18,7 @@ def play_pig_simulation():
         player_choice = "h" if player_score + roll_die() >= 50 else "r"
     if player_choice == "r":
         roll = roll_die()
-        player_times_rolled = player_times_rolled + 1
+        player_rolls = player_rolls + 1
     if roll == 1:
         player_current_score = player_score
         print("The player rolled a 1. Its turn is over.")
@@ -31,10 +29,11 @@ def play_pig_simulation():
     if player_choice == "h":
         current_player = "computer"
     else:
+      print(f"Your score: {player_score}. Computer score: {computer_score}.")
       computer_choice = "h" if computer_score + roll_die() >= 50 else "r"
       if computer_choice == "r":
         roll = roll_die()
-        computer_times_rolled = computer_times_rolled + 1
+        computer_rolls = computer_rolls + 1
         if roll == 1:
           computer_current_score = computer_score
           print("The computer rolled a 1. Its turn is over.")
@@ -48,7 +47,7 @@ def play_pig_simulation():
 
 
     if player_score >= 50:
-        print("You win!")
+        print("Simulation1 win!")
         data = [("simulation1 wins")]
         if not os.path.exists("Winnings.csv"):
             f1 = open("Winnings.csv", mode='w', newline="")
@@ -60,7 +59,7 @@ def play_pig_simulation():
         break
         
     if computer_score >= 50:
-        print("The computer wins.")
+        print("Simulation2 wins.")
         data = [("simulation2 wins")]
         if not os.path.exists("Winnings.csv"):
             f1 = open("Winnings.csv", mode='w', newline="")
